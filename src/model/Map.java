@@ -14,9 +14,9 @@ public class Map {
 
     } /* end Map */
 
-    public Room getInitialRoom() {
+    public Room getInitialPlayerRoom() {
         return thomas101;
-    }
+    } /* end getInitialPlayerRoom */
 
     private Room thomas101;
     private Room thomasHallway;

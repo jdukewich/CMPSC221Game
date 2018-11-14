@@ -1,6 +1,10 @@
 package model;
 
 public class CompassDirection extends Direction {
+    public static final String NORTH_NAME = "north";
+    public static final String SOUTH_NAME = "south";
+    public static final String EAST_NAME = "east";
+    public static final String WEST_NAME = "west";
 
     public static final CompassDirection NORTH = new CompassDirection("north");
     public static final CompassDirection SOUTH = new CompassDirection("south");

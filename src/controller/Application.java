@@ -2,6 +2,7 @@ package controller;
 
 public class Application {
     public static void main(String[] args) {
-        Controller.run();
+        Controller controller = Controller.getInstance();
+        controller.run();
     } /* end Main */
 } /* end Application */

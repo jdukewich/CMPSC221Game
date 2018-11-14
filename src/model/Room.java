@@ -33,7 +33,11 @@ public class Room {
         return candidateRoom;
     } /* end getExitForDirection */
 
-    private String getLookExits() {
+    public String getLookDescription() {
+        return lookDescription;
+    } /* end getLookDescription */
+
+    public String getLookExits() {
         String lookExits = "Obvious exits are to the ";
         String exitsAsString =
                 exits.keySet().stream().map(Direction::getName).collect(Collectors.joining(", "));
@@ -44,10 +48,6 @@ public class Room {
     public Room go(Direction direction) throws CantGoDirectionException {
         return getExitForDirection(direction);
     } /* end go */
-
-    public String look() {
-        return String.format("%s%n%s", lookDescription, getLookExits());
-    } /* end look */
 
     private Map<Direction, Room> exits;
     private String lookDescription;

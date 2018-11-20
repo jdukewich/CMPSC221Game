@@ -1,6 +1,6 @@
-package exceptions;
+package edu.psu.cmpsc221.exceptions;
 
-import model.Item;
+import edu.psu.cmpsc221.model.Item;
 
 public class InventoryFullException extends Exception {
     public InventoryFullException(String message, Item item) {

@@ -1,6 +1,6 @@
-package exceptions;
+package edu.psu.cmpsc221.exceptions;
 
-import model.Direction;
+import edu.psu.cmpsc221.model.Direction;
 
 public class CantGoDirectionException extends Exception {
     public CantGoDirectionException(Direction direction) {

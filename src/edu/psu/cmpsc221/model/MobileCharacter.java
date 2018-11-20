@@ -1,6 +1,6 @@
-package model;
+package edu.psu.cmpsc221.model;
 
-import exceptions.CantGoDirectionException;
+import edu.psu.cmpsc221.exceptions.CantGoDirectionException;
 
 public abstract class MobileCharacter extends ModelObject {
     protected MobileCharacter() {

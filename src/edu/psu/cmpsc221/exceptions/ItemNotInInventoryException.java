@@ -1,6 +1,6 @@
-package exceptions;
+package edu.psu.cmpsc221.exceptions;
 
-import model.Item;
+import edu.psu.cmpsc221.model.Item;
 
 public class ItemNotInInventoryException extends Exception {
     public ItemNotInInventoryException(String itemName) {

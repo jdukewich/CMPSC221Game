@@ -1,6 +1,6 @@
-package adventureobject;
+package edu.psu.cmpsc221;
 
-import controller.Controller;
+import edu.psu.cmpsc221.controller.Controller;
 
 public class AdventureObject {
     protected Controller getController() {

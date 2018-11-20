@@ -1,4 +1,4 @@
-package model;
+package edu.psu.cmpsc221.model;
 
 public class InfiniteInventorySystem extends InventorySystem {
     protected boolean canAddItem(Item item) {

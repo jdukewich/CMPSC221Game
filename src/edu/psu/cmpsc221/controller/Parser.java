@@ -1,8 +1,8 @@
-package controller;
+package edu.psu.cmpsc221.controller;
 
-import adventureobject.AdventureObject;
-import model.CompassDirection;
-import model.Direction;
+import edu.psu.cmpsc221.AdventureObject;
+import edu.psu.cmpsc221.model.CompassDirection;
+import edu.psu.cmpsc221.model.Direction;
 
 public class Parser extends AdventureObject {
     public void parseCommand(String command) {

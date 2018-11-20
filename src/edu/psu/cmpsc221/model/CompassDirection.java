@@ -1,4 +1,4 @@
-package model;
+package edu.psu.cmpsc221.model;
 
 public class CompassDirection extends Direction {
     public static final String NORTH_NAME = "north";

@@ -1,8 +1,8 @@
-package model;
+package edu.psu.cmpsc221.model;
 
-import exceptions.CantGoDirectionException;
-import exceptions.InventoryFullException;
-import exceptions.ItemNotInInventoryException;
+import edu.psu.cmpsc221.exceptions.CantGoDirectionException;
+import edu.psu.cmpsc221.exceptions.InventoryFullException;
+import edu.psu.cmpsc221.exceptions.ItemNotInInventoryException;
 
 public class Player extends MobileCharacter {
     public Player() {

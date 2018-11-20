@@ -1,10 +1,10 @@
-package controller;
+package edu.psu.cmpsc221.controller;
 
-import adventureobject.AdventureObject;
-import model.Direction;
-import model.Model;
-import view.TextView;
-import view.View;
+import edu.psu.cmpsc221.AdventureObject;
+import edu.psu.cmpsc221.model.Direction;
+import edu.psu.cmpsc221.model.Model;
+import edu.psu.cmpsc221.view.TextView;
+import edu.psu.cmpsc221.view.View;
 
 public class Controller extends AdventureObject {
     public Controller() {

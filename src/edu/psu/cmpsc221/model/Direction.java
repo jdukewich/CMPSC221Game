@@ -1,4 +1,4 @@
-package model;
+package edu.psu.cmpsc221.model;
 
 /**
  * A general direction for the game

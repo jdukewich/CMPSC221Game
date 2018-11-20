@@ -1,4 +1,4 @@
-package model;
+package edu.psu.cmpsc221.model;
 
 public class Item {
     public Item(String name, String lookDescription) {

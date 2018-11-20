@@ -1,11 +1,11 @@
-package model;
+package edu.psu.cmpsc221.model;
 
 public class Model {
     private static Model instance;
 
     static {
         instance = new Model();
-        //The model, itself, as well as both the map and player must exist before they can be initialized
+        //The edu.psu.cmpsc221.model, itself, as well as both the map and player must exist before they can be initialized
         instance.initialize();
     } /* end static */
 

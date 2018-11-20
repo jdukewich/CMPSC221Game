@@ -1,4 +1,4 @@
-package view;
+package edu.psu.cmpsc221.view;
 
 public interface View {
     public String getUserCommand();

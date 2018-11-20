@@ -1,6 +1,6 @@
-package view;
+package edu.psu.cmpsc221.view;
 
-import adventureobject.AdventureObject;
+import edu.psu.cmpsc221.AdventureObject;
 import java.util.Scanner;
 
 public class TextView extends AdventureObject implements View {

@@ -1,11 +1,49 @@
 package model;
 
 import exceptions.CantGoDirectionException;
+import exceptions.InventoryFullException;
+import exceptions.ItemNotInInventoryException;
 
 public class Player extends MobileCharacter {
     public Player() {
         // We cannot initialize the current room yet.
+        inventorySystem = new ZeroInventorySystem();
     } /* end Player */
+
+    void addToCurrentRoomInventory(Item item) {
+        getCurrentRoom().addToInventory(item);
+    } /* end addToCurrentRoomInventory */
+
+    private void addToInventory(Item item) throws InventoryFullException {
+        inventorySystem.add(item);
+    } /* end addToInventory */
+
+    public void drop(String itemName) {
+        try {
+            Item item = removeFromInventory(itemName);
+            addToCurrentRoomInventory(item);
+            getController().processDropSuccessful(itemName);
+        } catch (ItemNotInInventoryException e) {
+            getController().processDropItemNotInInventory(e.getMessage());
+        }
+    } /* end drop */
+
+    public void get(String itemName) {
+        try {
+            Item item = removeFromCurrentRoomInventory(itemName);
+            addToInventory(item);
+            getController().processGetSuccessful(itemName);
+        } catch (ItemNotInInventoryException e) {
+            getController().processGetItemNotInInventory(itemName);
+        } catch (InventoryFullException e) {
+            addToCurrentRoomInventory(e.getItem());
+            getController().processInventoryFullException(e.getMessage());
+        }
+    } /* end get */
+
+    String getInventoryString() {
+        return inventorySystem.getInventoryString();
+    } /* end getInventoryString */
 
     public void go(Direction direction) {
         try {
@@ -23,4 +61,14 @@ public class Player extends MobileCharacter {
     protected void initializeCurrentRoom() {
         setCurrentRoom(getModel().getInitialPlayerRoom());
     } /* end initializeCurrentRoom */
+
+    private Item removeFromCurrentRoomInventory(String itemName) throws ItemNotInInventoryException {
+        return getCurrentRoom().removeFromInventory(itemName);
+    } /* end removeFromCurrentRoomInventory */
+
+    private Item removeFromInventory(String itemName) throws ItemNotInInventoryException {
+        return inventorySystem.removeItemNamed(itemName);
+    } /* end removeFromInventory */
+
+    private InventorySystem inventorySystem;
 } /* end Player */

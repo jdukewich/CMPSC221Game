@@ -14,6 +14,18 @@ public class Model {
         player = new Player();
     } /* end Model */
 
+    void addToCurrentRoomInventory(Item item) {
+        getPlayer().addToCurrentRoomInventory(item);
+    } /* end addToCurrentRoomInventory */
+
+    public void drop(String itemName) {
+        getPlayer().drop(itemName);
+    } /* end drop */
+
+    public void get(String itemName) {
+        getPlayer().get(itemName);
+    } /* end get */
+
     public String getCurrentRoomLookDescription() {
         return getPlayer().getCurrentRoomLookDescription();
     } /* end getCurrentRoomLookDescription */
@@ -22,9 +34,17 @@ public class Model {
         return getPlayer().getCurrentRoomLookExits();
     } /* end getCurrentRoomLookExits */
 
+    public String getCurrentRoomLookItems() {
+        return getPlayer().getCurrentRoomLookItems();
+    } /* end getCurrentRoomLookItems */
+
     public static Model getInstance() {
         return instance;
     } /* end getInstance() */
+
+    public String getInventoryString() {
+        return getPlayer().getInventoryString();
+    } /* end getInventoryString */
 
     public Room getInitialPlayerRoom() {
         return getMap().getInitialPlayerRoom();

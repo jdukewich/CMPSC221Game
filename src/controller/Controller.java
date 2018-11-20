@@ -13,6 +13,14 @@ public class Controller extends AdventureObject {
         initializeView();
     } /* end Controller */
 
+    public void drop(String itemName) {
+        getModel().drop(itemName);
+    } /* end drop */
+
+    public void get(String itemName) {
+        getModel().get(itemName);
+    } /* end get */
+
     public String getCurrentRoomLookDescription() {
         return getModel().getCurrentRoomLookDescription();
     } /* end getCurrentRoomLookDescription */
@@ -21,9 +29,17 @@ public class Controller extends AdventureObject {
         return getModel().getCurrentRoomLookExits();
     } /* end getCurrentRoomLookExits */
 
+    public String getCurrentRoomLookItems() {
+        return getModel().getCurrentRoomLookItems();
+    } /* end getCurrentRoomLookItems */
+
     public static Controller getInstance() {
         return instance;
     } /* end getInstance */
+
+    public String getInventoryString() {
+        return getModel().getInventoryString();
+    } /* end getInventoryString */
 
     private boolean getKeepPlaying() {
         return keepPlaying;
@@ -57,6 +73,10 @@ public class Controller extends AdventureObject {
         view = new TextView();
     } /* end initializeView */
 
+    public void inventory() {
+        getView().inventory();
+    } /* end inventory */
+
     private void parseCommand(String command) {
         getParser().parseCommand(command);
     } /* end parseCommand */
@@ -65,9 +85,29 @@ public class Controller extends AdventureObject {
         getView().processCantGoDirection(directionName);
     } /* end processCantGoDirection */
 
+    public void processDropItemNotInInventory(String itemName) {
+        getView().processDropItemNotInInventory(itemName);
+    } /* end processDropItemNotInInventory */
+
+    public void processDropSuccessful(String itemName) {
+        getView().processDropSuccessful(itemName);
+    } /* end processDropSuccessful */
+
+    public void processGetItemNotInInventory(String itemName) {
+        getView().processGetItemNotInInventory(itemName);
+    } /* end processGetItemNotInInventory */
+
+    public void processGetSuccessful(String itemName) {
+        getView().processGetSuccessful(itemName);
+    } /* end processGetSuccessful */
+
     public void processGoDirectionSuccessful() {
         getView().look();
     } /* end processGoDirectionSuccessful */
+
+    public void processInventoryFullException(String message) {
+        getView().processInventoryFullException(message);
+    } /* end processInventoryFullException */
 
     public void processLook() {
         getView().look();

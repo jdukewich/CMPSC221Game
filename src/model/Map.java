@@ -12,6 +12,12 @@ public class Map {
         thomasHallway.addCompassExit(CompassDirection.EAST, thomasEastExit);
         thomasEastExit.addCompassExit((CompassDirection.EAST), mcElwainCourtyard);
 
+        thomas101.addToInventory(new Item("ball", "A fully inflated beach ball lies nearby."));
+        thomas101.addToInventory(new Item("pen", "A totally dried up dry-write pen is discarded here."));
+        thomas101.addToInventory(new Item("laptop", "There is a laptop here."));
+        thomas101.addToInventory(new Item("books", "A large pile of computer science books sits on a desk."));
+        thomas101.addToInventory(new Item("bookbag", "A rather heavy bookbag sits unattended in the room."));
+        thomas101.addToInventory(new Item("homework", "A thick pile of unclaimed homework sits on the front table."));
     } /* end Map */
 
     public Room getInitialPlayerRoom() {

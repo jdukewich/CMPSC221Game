@@ -10,12 +10,16 @@ public class Parser extends AdventureObject {
 
         if (commands.length > 0) {
             switch (commands[0]) {
+                case "drop" : processDrop(commands); break;
+                case "get" : processGet(commands); break;
                 case "go" : processGo(commands); break;
                 case CompassDirection.NORTH_NAME : processGo(CompassDirection.NORTH); break;
                 case CompassDirection.SOUTH_NAME : processGo(CompassDirection.SOUTH); break;
                 case CompassDirection.EAST_NAME : processGo(CompassDirection.EAST); break;
                 case CompassDirection.WEST_NAME : processGo(CompassDirection.WEST); break;
 
+                case "i" : // Fall through to next entry
+                case "inventory" : processInventory(); break;
                 case "look" : getController().processLook(); break;
 
                 case "quit" : getController().processQuitCommand(); break;
@@ -24,6 +28,14 @@ public class Parser extends AdventureObject {
             } /* end switch */
         } /* end if */
     } /* end parseCommand */
+
+    private void processDrop(String[] commands) {
+        getController().drop(commands.length > 1 ? commands[1] : "");
+    } /* end processDrop */
+
+    private void processGet(String[] commands) {
+        getController().get(commands.length > 1 ? commands[1] : "");
+    } /* end processGet */
 
     private void processGo(Direction direction) {
         getController().go(direction);
@@ -62,4 +74,9 @@ public class Parser extends AdventureObject {
 
         if (!wasCommandsProcessed) getController().processUnknownCommand(String.join(" ", commands));
     } /* end processGo */
+
+    private void processInventory() {
+        getController().inventory();
+    } /* end processInventory */
+
 } /* end Parser */

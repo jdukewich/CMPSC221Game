@@ -19,6 +19,10 @@ public abstract class MobileCharacter extends ModelObject {
         return getCurrentRoom().getLookExits();
     } /* end getCurrentRoomLookExits */
 
+    public String getCurrentRoomLookItems() {
+        return getCurrentRoom().getLookItems();
+    } /* end getCurrentRoomLookItems */
+
     protected void go(Direction direction) throws CantGoDirectionException {
         setCurrentRoom(getCurrentRoom().go(direction));
     } /* end go */

@@ -12,12 +12,12 @@ public class Map {
         thomasHallway.addCompassExit(CompassDirection.EAST, thomasEastExit);
         thomasEastExit.addCompassExit((CompassDirection.EAST), mcElwainCourtyard);
 
-        thomas101.addToInventory(new Item("ball", "A fully inflated beach ball lies nearby."));
-        thomas101.addToInventory(new Item("pen", "A totally dried up dry-write pen is discarded here."));
-        thomas101.addToInventory(new Item("laptop", "There is a laptop here."));
-        thomas101.addToInventory(new Item("books", "A large pile of computer science books sits on a desk."));
-        thomas101.addToInventory(new Item("bookbag", "A rather heavy bookbag sits unattended in the room."));
-        thomas101.addToInventory(new Item("homework", "A thick pile of unclaimed homework sits on the front table."));
+        thomas101.addToInventory(new Item("ball", "A fully inflated beach ball lies nearby.", 1, 5));
+        thomas101.addToInventory(new Item("pen", "A totally dried up dry-write pen is discarded here.", 1, 1));
+        thomas101.addToInventory(new Item("laptop", "There is a laptop here.", 3, 2));
+        thomas101.addToInventory(new Item("books", "A large pile of computer science books sits on a desk.", 3, 3));
+        thomas101.addToInventory(new Item("bookbag", "A rather heavy bookbag sits unattended in the room.", 4, 3));
+        thomas101.addToInventory(new Item("homework", "A thick pile of unclaimed homework sits on the front table.", 4, 2));
     } /* end Map */
 
     public Room getInitialPlayerRoom() {

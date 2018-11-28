@@ -1,20 +1,11 @@
 package edu.psu.cmpsc221.view;
 
-import edu.psu.cmpsc221.AdventureObject;
 import java.util.Scanner;
 
-public class TextView extends AdventureObject implements View {
+public class TextView extends View {
     public TextView() {
         scanner = new Scanner(System.in);
     } /* end TextView */
-
-    private String getInventoryString() {
-        return getController().getInventoryString();
-    } /* end getInventoryString */
-
-    private String getLookString() {
-        return String.format("%s%n%s%s", getController().getCurrentRoomLookDescription(), getController().getCurrentRoomLookItems(), getController().getCurrentRoomLookExits());
-    } /* end getLookString */
 
     private Scanner getScanner() {
         return scanner;

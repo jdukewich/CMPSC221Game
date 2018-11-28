@@ -2,7 +2,7 @@ package edu.psu.cmpsc221.model;
 
 public class FiniteInventorySystem extends InventorySystem {
     public FiniteInventorySystem(int maxItems) {
-            this.maxItems = maxItems;
+        this.maxItems = maxItems;
     } /* end FiniteInventorySystem */
 
     @Override
@@ -13,7 +13,7 @@ public class FiniteInventorySystem extends InventorySystem {
     @Override
     protected String getInventoryFullMessage() {
         return "Your inventory has the max number of items!";
-    }
+    } /* end getInventoryFullMessage */
 
     private int maxItems;
-}
+} /* end FiniteInventorySystem */

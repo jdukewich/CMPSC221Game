@@ -5,6 +5,7 @@ import edu.psu.cmpsc221.model.Direction;
 import edu.psu.cmpsc221.model.Model;
 import edu.psu.cmpsc221.view.TextView;
 import edu.psu.cmpsc221.view.View;
+import edu.psu.cmpsc221.view.gui.GuiView;
 
 public class Controller extends AdventureObject {
     public Controller() {
@@ -71,6 +72,7 @@ public class Controller extends AdventureObject {
 
     private void initializeView() {
         view = new TextView();
+        //view = new GuiView();
     } /* end initializeView */
 
     public void inventory() {
